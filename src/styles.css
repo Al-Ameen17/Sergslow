@@ -1,140 +1,97 @@
+*{
+	box-sizing: border-box;
+}
+
 body{
 	background: #0e0e0e;
+	background-image:url(../images/theater.jpg);
+	background-size:cover;
 	color: white;
+	 font-family: "Bangers", system-ui;
+  	font-weight: 400;
+  	font-style: lighter;
 }
-
-.text-title{
-	color: black;
-	border: none;
-	border-radius: 5px;
-	background: none;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding: 8px;
-	margin-left: auto;
-	margin-right: auto;
-	font-weight: lighter;
-}
-
-.text-open{
-	display: block;	
-	border: none;
-	border-radius: 5px;
-	background: none;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding: 8px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
 
 .btn-wrapper{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px;	
-	
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+	padding: 10px 20px;
 }
 
 .btn{
-	width: 350px;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding: 8px;
 	border:none;
-	cursor: pointer;
 	background: none;
+	transition: transform 0.2s ease, filter 0.2s ease; /* Smooths the hover effect */
+	cursor:pointer;
 }
 
+.btn:hover{
+	transform:translateY(-3px); /* Lifts the button slightly */
+	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Adds a white glow around the logo */
+}
 
+.btn:active{
+	transform: translateY(0); /* Pushes the button back down when clicked */
+	filter: brightness(0.8);  /* Dims it slightly to show it's being pressed */
+}
+
+.btn img {
+    max-height: 80px; /* Adjust this value to your preferred button height */
+    width: auto;      /* Keeps the logo's proportions correct */
+    display: block;   /* Removes extra whitespace at the bottom of images */
+}
+
+.btn a{
+	display:block;
+	width:100%;
+	height:100%;
+}
 
 .input-search{
 	display: block;
 	width: 400px;
-	height:24;
-	margin-top: 10px;
-	margin-left:auto;
-	margin-right: auto;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	height:24px;
+	margin: 10px auto 0 auto;
+	padding:8px 16px;
 	border: 1px solid black;
 	border-radius: 20px;
 	cursor: pointer;
-	background: grey;
-
+	background: white;
 }
 
-*{
-	box-sizing: border-box;
-}
-.batman {
+
+.batman, .read, .animelist {
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:flex-start;
 	padding: 10px 20px; 
 }
 
-.batman-movie{
-	margin: 5px;
+.batman-movie, .read-book, .animelist-anime{
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	width: 250px;
-	padding: 6px 6px;
+	padding: 6px;
 	margin:10px;
+	overflow:hidden;
 }
 
 .batman-movie:hover, .animelist-anime:hover, .read-book:hover{
 	border:1px solid #777;
 }
 
-.batman-movie img{
+.batman-movie img, .read-book img, .animelist-anime img{
 	width:100%;
-	height:auto;
+	height: 350px;
+	object-fit:cover;
+	transition: transform 0.3s ease; /* Smooth growth */
 }
 
-.read {
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:flex-start;
-}
-
-.read-book{
-	margin: 5px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	width: 250px;
-	padding: 6px 6px;
-	margin:10px;
-}
-
-.read-book img {
-	width:100%;
-	height:auto;
-}
-
-.animelist {
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:flex-start;
-}
-
-.animelist-anime{
-	margin: 5px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	width: 250px;
-	padding: 6px 6px;
-	margin:10px;
-}
-
-.animelist-anime img{
-	width:100%;
-	height:auto;
+.batman-movie:hover img, .read-book:hover img, .animelist-anime:hover img {
+    transform: scale(1.2); /* Makes the poster 5% larger on hover */
+    z-index: 10; /* Ensures the zoomed image stays on top of others */
 }
 
 a{
@@ -146,4 +103,33 @@ ol{
 	list-style-type: none;
 	margin:0;
 	padding:0;
+}
+
+/* "If the screen is 768px wide or smaller (Tablets)..." */
+@media screen and (max-width: 768px) {
+    .input-search {
+        width: 80%; /* Shrink the search bar so it doesn't go off-screen */
+    }
+
+    .batman-movie, .read-book, .animelist-anime {
+        width: 45%; /* Show 2 cards per row instead of many */
+        margin: 2.5%; /* Space them out evenly */
+    }
+}
+
+/* "If the screen is 480px wide or smaller (Phones)..." */
+@media screen and (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column; /* Stack the top logo buttons vertically */
+        align-items: center;
+    }
+
+    .btn img {
+        max-height: 60px; /* Make logos smaller for small screens */
+    }
+
+    .batman-movie, .read-book, .animelist-anime {
+        width: 90%; /* One giant card per row for easy tapping */
+        margin: 10px auto;
+    }
 }
