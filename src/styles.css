@@ -50,7 +50,7 @@ body{
 	height:100%;
 }
 
-.input-search{
+#input-search{
 	display: block;
 	justify-content:center;
 	align-items:center;
@@ -137,4 +137,5 @@ ol{
     }
 
 }
+
 
