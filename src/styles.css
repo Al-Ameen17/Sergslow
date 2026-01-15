@@ -51,6 +51,8 @@ body{
 
 .input-search{
 	display: block;
+	justify-content:center;
+	align-items:center;
 	width: 400px;
 	height:24px;
 	margin: 10px auto 0 auto;
@@ -132,4 +134,5 @@ ol{
         width: 90%; /* One giant card per row for easy tapping */
         margin: 10px auto;
     }
+
 }
