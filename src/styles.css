@@ -65,14 +65,14 @@ body{
 }
 
 
-.batman, .read, .animelist, .initial {
+.batman, .read, .animelist, .initial, .mf-ghost{
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:flex-start;
 	padding: 10px 20px; 
 }
 
-.batman-movie, .read-book, .animelist-anime, .animelist-anime-initial{
+.batman-movie, .read-book, .animelist-anime, .animelist-anime-initial, .mf-ghost-season{
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	width: 250px;
@@ -81,18 +81,18 @@ body{
 	overflow:hidden;
 }
 
-.batman-movie:hover, .animelist-anime:hover, .read-book:hover, .animelist-anime-initial:hover{
+.batman-movie:hover, .animelist-anime:hover, .read-book:hover, .animelist-anime-initial:hover, .mf-ghost-season:hover{
 	border:1px solid #777;
 }
 
-.batman-movie img, .read-book img, .animelist-anime img, .animelist-anime-initial img{
+.batman-movie img, .read-book img, .animelist-anime img, .animelist-anime-initial img, .mf-ghost-season img{
 	width:100%;
 	height: 350px;
 	object-fit:cover;
 	transition: transform 0.3s ease; /* Smooth growth */
 }
 
-.batman-movie:hover img, .read-book:hover img, .animelist-anime:hover img, .animelist-anime-initial:hover img{
+.batman-movie:hover img, .read-book:hover img, .animelist-anime:hover img, .animelist-anime-initial:hover img, mf-ghost-season:hover img{
     transform: scale(1.2); /* Makes the poster 5% larger on hover */
     z-index: 10; /* Ensures the zoomed image stays on top of others */
 }
@@ -114,7 +114,7 @@ ol{
         width: 80%; /* Shrink the search bar so it doesn't go off-screen */
     }
 
-    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial {
+    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial, mf-ghost-season{
         width: 45%; /* Show 2 cards per row instead of many */
         margin: 2.5%; /* Space them out evenly */
     }
@@ -131,12 +131,13 @@ ol{
         max-height: 60px; /* Make logos smaller for small screens */
     }
 
-    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial {
+    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial, .mf-ghost-season{
         width: 90%; /* One giant card per row for easy tapping */
         margin: 10px auto;
     }
 
 }
+
 
 
 
