@@ -92,7 +92,7 @@ body{
 	transition: transform 0.3s ease; /* Smooth growth */
 }
 
-.batman-movie:hover img, .read-book:hover img, .animelist-anime:hover img, .animelist-anime-initial:hover img, mf-ghost-season:hover img{
+.batman-movie:hover img, .read-book:hover img, .animelist-anime:hover img, .animelist-anime-initial:hover img, .mf-ghost-season:hover img{
     transform: scale(1.2); /* Makes the poster 5% larger on hover */
     z-index: 10; /* Ensures the zoomed image stays on top of others */
 }
@@ -114,7 +114,7 @@ ol{
         width: 80%; /* Shrink the search bar so it doesn't go off-screen */
     }
 
-    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial, mf-ghost-season{
+    .batman-movie, .read-book, .animelist-anime, .animelist-anime-initial, .mf-ghost-season{
         width: 45%; /* Show 2 cards per row instead of many */
         margin: 2.5%; /* Space them out evenly */
     }
@@ -137,6 +137,7 @@ ol{
     }
 
 }
+
 
 
 
